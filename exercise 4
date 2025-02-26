@@ -1,0 +1,153 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO4EmgACBiVJG0HxLV/dWoC",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kukuklux/ENG-219-100-2023/blob/main/exercise%204\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_grade(score):\n",
+        "    if score >= 90:\n",
+        "        return \"A\"\n",
+        "    elif score >= 80:\n",
+        "        return \"B\"\n",
+        "    elif score >= 70:\n",
+        "        return \"C\"\n",
+        "    elif score >= 60:\n",
+        "        return \"D\"\n",
+        "    else:\n",
+        "        return \"F\"\n"
+      ],
+      "metadata": {
+        "id": "wwxAMtq4IAGW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def cost_of_project(engraving, solid_gold):\n",
+        "    engraving_units = len(engraving)  # count the number of characters (engraved units)\n",
+        "\n",
+        "    if solid_gold:\n",
+        "        cost = 100 + (engraving_units * 10)  # solid gold: base $100 + $10 per engraved unit\n",
+        "    else:\n",
+        "        cost = 50 + (engraving_units * 7)  # gold plated: base $50 + $7 per engraved unit\n",
+        "\n",
+        "    return cost\n"
+      ],
+      "metadata": {
+        "id": "llzAcPr5InUO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_water_bill(num_gallons):\n",
+        "    # Initialize the bill variable\n",
+        "    if num_gallons <= 8000:\n",
+        "        bill = (num_gallons / 1000) * 5  # Tier 1\n",
+        "    elif num_gallons <= 22000:\n",
+        "        bill = (num_gallons / 1000) * 6  # Tier 2\n",
+        "    elif num_gallons <= 30000:\n",
+        "        bill = (num_gallons / 1000) * 7  # Tier 3\n",
+        "    else:\n",
+        "        bill = (num_gallons / 1000) * 10  # Tier 4\n",
+        "\n",
+        "    return bill\n"
+      ],
+      "metadata": {
+        "id": "czmL6uTVI1QS"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_phone_bill(gb):\n",
+        "    # Base cost for the first 15 GB\n",
+        "    base_cost = 100\n",
+        "\n",
+        "    # If usage is more than 15 GB\n",
+        "    if gb > 15:\n",
+        "        # Excess GB used\n",
+        "        excess_gb = gb - 15\n",
+        "\n",
+        "        # Convert excess GB to MB (1 GB = 1000 MB)\n",
+        "        excess_mb = excess_gb * 1000\n",
+        "\n",
+        "        # Additional cost for excess usage\n",
+        "        additional_cost = excess_mb * 0.10\n",
+        "\n",
+        "        # Total cost\n",
+        "        total_bill = base_cost + additional_cost\n",
+        "    else:\n",
+        "        # If usage is 15 GB or less, the bill is just the base cost\n",
+        "        total_bill = base_cost\n",
+        "\n",
+        "    return total_bill\n"
+      ],
+      "metadata": {
+        "id": "ML0dO7vRJA3p"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "get_labels(\"solid\", 30, 110, 1.0, 0, 180, 10)\n",
+        "\n",
+        "get_labels(\"solid\", 60, 300, 10, 0, 600, 2)\n",
+        "\n",
+        "get_labels(\"solid\", 30, 150, 3.5, 0, 80, 9)\n",
+        "\n",
+        "get_labels(\"liquid\", 355, 160, 0, 0, 70, 44)\n",
+        "\n",
+        "# For Zucaritas Cereal\n",
+        "get_labels(\"solid\", 30, 110, 1.0, 0, 180, 10)\n",
+        "\n",
+        "# For Mozzarella Sticks\n",
+        "get_labels(\"solid\", 60, 300, 10, 0, 600, 2)\n",
+        "\n",
+        "# For Pillsbury Cookies\n",
+        "get_labels(\"solid\", 30, 150, 3.5, 0, 80, 9)\n",
+        "\n",
+        "# For Sunkist Orange Soda\n",
+        "get_labels(\"liquid\", 355, 160, 0, 0, 70, 44)\n"
+      ],
+      "metadata": {
+        "id": "YIQdj4eNJDcf"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
