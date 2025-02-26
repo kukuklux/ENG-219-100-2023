@@ -1,0 +1,146 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPuK0BbhcshGW4pZpHM1U8A",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kukuklux/ENG-219-100-2023/blob/main/exercise%203\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "0HjkJjPzEZLQ"
+      },
+      "outputs": [],
+      "source": [
+        "def get_expected_cost(beds, baths):\n",
+        "    value = 80000 + (beds * 30000) + (baths * 10000)\n",
+        "    return value\n",
+        "\n",
+        "# Check the function with example inputs\n",
+        "print(get_expected_cost(0, 0))  # Expected: 80000\n",
+        "print(get_expected_cost(1, 1))  # Expected: 120000\n",
+        "print(get_expected_cost(2, 1))  # Expected: 150000"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define the function\n",
+        "def get_expected_cost(beds, baths):\n",
+        "    return 80000 + (beds * 30000) + (baths * 10000)\n",
+        "\n",
+        "# Calculate expected costs for each option\n",
+        "option_one = get_expected_cost(2, 3)  # Two bedrooms, three bathrooms\n",
+        "option_two = get_expected_cost(3, 2)  # Three bedrooms, two bathrooms\n",
+        "option_three = get_expected_cost(3, 3)  # Three bedrooms, three bathrooms\n",
+        "option_four = get_expected_cost(3, 4)  # Three bedrooms, four bathrooms\n",
+        "\n",
+        "# Print results\n",
+        "print(option_one)   # Expected: 150000\n",
+        "print(option_two)   # Expected: 160000\n",
+        "print(option_three) # Expected: 170000\n",
+        "print(option_four)  # Expected: 180000\n",
+        "\n",
+        "# Check your answer\n",
+        "q2.check()"
+      ],
+      "metadata": {
+        "id": "yRMIxQQ_E7tw"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+        "    total_sqft = sqft_walls + sqft_ceiling  # Total area to be painted\n",
+        "    gallons_needed = total_sqft / sqft_per_gallon  # Gallons required\n",
+        "    cost = gallons_needed * cost_per_gallon  # Total cost\n",
+        "    return cost\n",
+        "\n",
+        "# Example test case\n",
+        "print(get_cost(432, 144, 400, 15))  # Expected: 21.6\n",
+        "\n",
+        "# Check your answer\n",
+        "q3.check()"
+      ],
+      "metadata": {
+        "id": "qTp59RKsFBGL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define the function\n",
+        "def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+        "    total_sqft = sqft_walls + sqft_ceiling  # Total area to be painted\n",
+        "    gallons_needed = total_sqft / sqft_per_gallon  # Gallons required\n",
+        "    cost = gallons_needed * cost_per_gallon  # Total cost\n",
+        "    return cost\n",
+        "\n",
+        "# Calculate the cost of painting the room\n",
+        "project_cost = get_cost(432, 144, 400, 15)\n",
+        "\n",
+        "# Print result\n",
+        "print(project_cost)  # Expected: 21.6\n",
+        "\n",
+        "# Check your answer\n",
+        "q4.check()"
+      ],
+      "metadata": {
+        "id": "G_B97uKLFHKG"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "\n",
+        "def get_actual_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+        "    total_sqft = sqft_walls + sqft_ceiling  # Total area to be painted\n",
+        "    gallons_needed = total_sqft / sqft_per_gallon  # Exact gallons required\n",
+        "    rounded_gallons = math.ceil(gallons_needed)  # Round up to the nearest whole gallon\n",
+        "    cost = rounded_gallons * cost_per_gallon  # Total cost\n",
+        "    return cost\n",
+        "\n",
+        "# Example test case\n",
+        "print(get_actual_cost(432, 144, 400, 15))  # Expected: 30\n",
+        "\n",
+        "# Check your answer\n",
+        "q5.check()"
+      ],
+      "metadata": {
+        "id": "KaqOWVL3FN-V"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
