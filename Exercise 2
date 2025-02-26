@@ -1,0 +1,129 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNXgGIS+i4aBasMfMNT/F2G",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kukuklux/ENG-219-100-2023/blob/main/Exercise%202\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_expected_cost(beds, baths):\n",
+        "    value = 80000 + 30000 * beds + 10000 * baths\n",
+        "    return value"
+      ],
+      "metadata": {
+        "id": "zz8xIK7GGCQK"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "option_one = get_expected_cost(2, 3)\n",
+        "option_two = get_expected_cost(3, 2)\n",
+        "option_three = get_expected_cost(3, 3)\n",
+        "option_four = get_expected_cost(3, 4)\n",
+        "\n",
+        "print(option_one)\n",
+        "print(option_two)\n",
+        "print(option_three)\n",
+        "print(option_four)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XSmq59zYGe4-",
+        "outputId": "4474708a-a82b-46fe-8b9f-c9241e9743eb"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "170000\n",
+            "190000\n",
+            "200000\n",
+            "210000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+        "    total_area = sqft_walls + sqft_ceiling\n",
+        "    gallons_needed = total_area / sqft_per_gallon\n",
+        "    cost = gallons_needed * cost_per_gallon\n",
+        "    return cost"
+      ],
+      "metadata": {
+        "id": "PGbppsWWGwIf"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "project_cost = get_cost(432, 144, 400, 15)\n"
+      ],
+      "metadata": {
+        "id": "8vV7bz48G_CR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "port math\n",
+        "\n",
+        "def get_actual_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+        "    # Step 1: Calculate total area to be painted\n",
+        "    total_area = sqft_walls + sqft_ceiling\n",
+        "\n",
+        "    # Step 2: Calculate number of gallons needed (rounded up)\n",
+        "    gallons_needed = math.ceil(total_area / sqft_per_gallon)\n",
+        "\n",
+        "    # Step 3: Calculate the cost\n",
+        "    cost = gallons_needed * cost_per_gallon\n",
+        "\n",
+        "    return cost\n",
+        "    print(get_actual_cost(432, 144, 400, 15))  # Expected: 30\n",
+        "\n",
+        "    print(get_actual_cost(594, 288, 400, 15))  # Expected: 45\n"
+      ],
+      "metadata": {
+        "id": "wu3QfPmAHWuw"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
